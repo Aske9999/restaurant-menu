@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {Link, useParams} from "react-router-dom";
-import MealCard from "./MealCard";
 
 const FromIngs = () => {
     const {ing} = useParams()
@@ -9,7 +8,7 @@ const FromIngs = () => {
     useEffect(() => {
         axios(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ing}`)
             .then(({data}) => setMeals(data.meals))
-    }, [])
+    }, [ing])
     return (
         <div className="container">
             <div className="row">
