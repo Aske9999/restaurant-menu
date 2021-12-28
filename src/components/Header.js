@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {useNavigate, NavLink} from "react-router-dom";
+import logo from "../images/hat2.png"
 
 
 const Header = () => {
@@ -18,9 +19,10 @@ const Header = () => {
     }
 
     return (
-        <header>
+        <header className="header">
             <div className="container">
                 <div className="flex-container">
+                    <img className="hat" src={logo} alt=""/>
                     <h2 className="main-title">INTERCONTINENTAL RESTAURANT</h2>
                     <div className="header">
                         <NavLink className="main-links" to="/">Main</NavLink>

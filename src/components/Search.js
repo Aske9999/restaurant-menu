@@ -7,6 +7,7 @@ const Search = () => {
     const {name} = useParams()
     const [meal, setMeal] = useState([])
 
+
     useEffect(() => {
         axios(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
             .then(({data}) => setMeal(data.meals))
@@ -17,11 +18,12 @@ const Search = () => {
             <div className="container">
                 <div className="row">
                     {
-                        meal.map(item => {
+                        meal
+                        ? meal.map(item => {
                             return (
                                 <MealCard meal={item}/>
                             )
-                        })
+                        }) : <h1 className="text-danger">404 Error</h1>
                     }
                 </div>
             </div>

@@ -15,11 +15,11 @@ const Main = () => {
                 {
                     meals.map(item => {
                         return (
-                            <div className="col-3" key={item.idMeal}>
+                            <div className="col-sm-6 col-md-4 col-lg-3" key={item.idMeal}>
                                 <div className="meal-card">
                                     <Link className="meal-link" to={`/meals/${item.idMeal}`}>
                                         <img className="meal-pic" src={item.strMealThumb} alt=""/>
-                                        <h3>{item.strMeal}</h3>
+                                        <h6>{item.strMeal}</h6>
                                     </Link>
                                 </div>
                             </div>
